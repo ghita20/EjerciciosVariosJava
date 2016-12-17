@@ -44,7 +44,7 @@ public class Persona {
 		}
 		
 		//Calcular indice de masa corporal
-		public String calcularIMC(){
+		public void calcularIMC(){
 			float pesoIdeal=peso/(float)(Math.pow(altura, 2));
 			int resultado;
 			final byte SOBREPESO=1,PESO_IDEAL=0,POR_DEBAJO=-1;
@@ -60,13 +60,12 @@ public class Persona {
 			case -1:
 				System.out.println(nombre +" tiene un peso por debajo del ideal."); break;
 			case 0:
-				System.out.println(nombre +" tiene un peso ideal.");
+				System.out.println(nombre +" tiene un peso ideal."); break;
 			case 1:
 				System.out.println(nombre +" tiene sobrepeso."); break;
 			
 			}
 			
-			return "IMC calculado correctamente.";
 			
 		}
 		
@@ -97,7 +96,7 @@ public class Persona {
 		}
 		
 		//generar DNI
-		public String generarDni(){
+		public void generarDni(){
 			final String LETRA_DNI="TRWAGMYFPDXBNJZSQVHLCKE";
 			String dniGenerado="";
 			
@@ -111,38 +110,39 @@ public class Persona {
 			
 			dniGenerado+=LETRA_DNI.charAt(Integer.parseInt(dniGenerado)%23);
 			
-			return dni=dniGenerado;
+			dni=dniGenerado;
 			
 		}
 		
-		//introducir datos persona
-		public String setDatos(){
-			String nombre; char sexo; int edad; float peso; float altura;
-			System.out.println("Introduce el nombre de la persona: ");
-			this.nombre=nombre=teclado.nextLine();
-			
-			System.out.println("Introduce la edad: ");
-			this.edad=edad=teclado.nextInt();
-			teclado.nextLine();
-			
-			System.out.println("Introduce el sexo: ");
-			this.sexo=sexo=teclado.next().charAt(0);
-			
-			System.out.println("Introduce el peso: ");
-			this.peso=peso=teclado.nextFloat();
-			
-			System.out.println("Introduce la altura: ");
-			this.altura=altura=teclado.nextFloat();
-			
-			teclado.nextLine();
-			
-			return "Realizado correctamente.";
-			
+		//introducir datos persona	
+		public void setNombre(String nombre){
+			this.nombre=nombre;
+		}
+		
+		public void setEdad(int edad){
+			this.edad=edad;
+		}
+		
+		public void setSexo(char sexo){
+			this.sexo=sexo;
+		}
+		
+		public void setAltura(float altura){
+			this.altura=altura;
+		}
+		
+		public void setPeso(float peso){
+			this.peso=peso;
 		}
 		
 		
-		
-		
+		public void imprimirMayorEdad(boolean esMayor){
+			if(esMayor)
+				System.out.println(nombre +" es mayor de edad.");
+			else
+				System.out.println(nombre +" no es mayor de edad.");
+			
+		}
 		
 		
 		

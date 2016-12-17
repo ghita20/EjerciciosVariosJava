@@ -34,7 +34,11 @@ public class Main {
 		Persona persona3=new Persona();
 		
 		//introducir datos de la persona 3
-		persona3.setDatos();
+		persona3.setNombre("Manolo");
+		persona3.setEdad(23);
+		persona3.setSexo('H');
+		persona3.setAltura((float)1.90);
+		persona3.setPeso((float)90.5);
 		
 		//Generar dni a las 3 personas
 		persona1.generarDni();
@@ -43,30 +47,27 @@ public class Main {
 		
 		//comprobar si están en su peso ideal
 		persona1.calcularIMC();
+		System.out.println("     ");
 		persona2.calcularIMC();
+		System.out.println("     ");
 		persona3.calcularIMC();
+		System.out.println("     ");
 		
 		//comprobar si cada persona es mayor de edad
-		
-		if(persona1.esMayorDeEdad())
-			System.out.println("Persona 1. Es mayor de edad.");
-		else
-			System.out.println("Persona 1. No es mayor de edad.");
-		
-		if(persona2.esMayorDeEdad())
-			System.out.println("Persona 2. Es mayor de edad.");
-		else
-			System.out.println("Persona 2. No es mayor de edad.");
-		
-		if(persona3.esMayorDeEdad())
-			System.out.println("Persona 3. Es mayor de edad.");
-		else
-			System.out.println("Persona 3. No es mayor de edad.");
+		persona1.imprimirMayorEdad(persona1.esMayorDeEdad());
+		System.out.println("     ");
+		persona2.imprimirMayorEdad(persona2.esMayorDeEdad());
+		System.out.println("     ");
+		persona3.imprimirMayorEdad(persona3.esMayorDeEdad());
 		
 		
-		
+		//imprimir datos completos
 		System.out.println(persona1.toString());
+		System.out.println("     ");
+		
 		System.out.println(persona2.toString());
+		System.out.println("     ");
+		
 		System.out.println(persona3.toString());
 		
 		
