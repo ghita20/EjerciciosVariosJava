@@ -59,8 +59,8 @@ public class Main {
 			
 			case 5:
 				//realiza el método visualizar() a las cuentas creadas
-				for(int i=0;i<cuenta_.length;i++)
-					cuenta_[i].visualizar();
+				for(CuentaCorriente cuenta:cuenta_)
+					cuenta.visualizar();
 				
 				break;
 			
