@@ -1,3 +1,5 @@
+/*Programa que realiza operaciones con una clase Indicador que puede tomar 
+diferentes valores según el tipo indicado.*/
 
 public class Main {
 

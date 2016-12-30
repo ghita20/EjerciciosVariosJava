@@ -1,14 +1,14 @@
 
 public class TragaBolas {
-	//Patron para imprimir el método Visualizar()
-	private static String patron="Color: %s --- BolasComidas= %d --- CantidadMáxBolas= %d";
+	//Patron para imprimir el método Visualizar() *está static porque es independiente del objeto
+	private static final String patron="Color: %s --- BolasComidas= %d --- CantidadMáxBolas= %d";
 	
 	//miembros del objeto
 	private String color;
 	private int bolasComidas,maxBolas;
 	
 	//colores permitidos
-	private static final String COLORES_PERMITIDOS="verde,amarillo,rojo";
+	private static final String COLORES_PERMITIDOS[]={"verde","amarillo","rojo"};
 	
 	
 	//CONSTRUCTORES
@@ -24,14 +24,14 @@ public class TragaBolas {
 	//MÉTODOOOOOOS
 	
 	//Visualizar
-	public void Visualizar(){
+	public void visualizar(){
 		//imprimo el color , bolasComidas, maxBolas
 		System.out.println(String.format(patron, color,bolasComidas,maxBolas));
-		
 	}
 	
 	//comer
-	public void Comer(){
+	public void comer(){
+		//compruebo que las bolas comidas son inferiores al nr de máxBolas
 		if(bolasComidas<maxBolas){
 			++bolasComidas;
 			System.out.println("He comido una bola.");
@@ -40,7 +40,7 @@ public class TragaBolas {
 	}
 	
 	//trotar
-	public void Trotar(){
+	public void trotar(){
 		if(bolasComidas>=1){
 			--bolasComidas;
 			System.out.println("Estoy trotando,");
@@ -50,7 +50,7 @@ public class TragaBolas {
 	}
 	
 	//dormir
-	public void Dormir(){
+	public void dormir(){
 		if(bolasComidas==maxBolas){
 			System.out.println("Tripa llena. ZZZZZZZ");
 			bolasComidas/=2;
@@ -58,12 +58,20 @@ public class TragaBolas {
 			System.out.println("No quiero dormir.");
 	}
 	
-	//comrpobar que el color es correcto
-	public static boolean ColorPermitido(String color){
-		if(COLORES_PERMITIDOS.indexOf(color.toLowerCase())<0)
-			return false;
-		else
+	//comprobar que el color es correcto
+	public static boolean colorPermitido(String color){
+		boolean color_permitido=false;
+		
+		//comrpuebo si el color es igual a alguno de los colores permitidos
+		for(String color_perm: COLORES_PERMITIDOS)
+			if(color_perm.equals(color.toLowerCase()))
+				color_permitido=true;
+		
+		//si es igual a algún color permitido devuelvo true
+		if(color_permitido)
 			return true;
+		else
+			return false;
 	}
 	
 	

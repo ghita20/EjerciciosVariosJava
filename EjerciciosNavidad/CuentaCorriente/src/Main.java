@@ -1,3 +1,6 @@
+/*Programa que dados dos objetos de la clase CuentaCorriente depliega un menú
+que permite realizar operaciones con esos objetos*/
+
 import java.util.Scanner;
 public class Main {
 

@@ -88,11 +88,8 @@ public class Indicador {
 				i++;
 		}
 		
-		if(encontrado)
-			System.out.println(String.format(patron, valor,REPR_TIPOS[i]));
-		else
-			System.out.println(String.format(patron, valor,tipo));
-			
+		System.out.println(String.format(patron, valor,encontrado?REPR_TIPOS[i]:tipo));
+		
 	}
 	
 	

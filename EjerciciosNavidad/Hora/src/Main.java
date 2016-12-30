@@ -1,4 +1,4 @@
-
+/*Programa que realiza operaciones con un objeto de tipo Hora*/
 public class Main {
 
 	public static void main(String[] args) {

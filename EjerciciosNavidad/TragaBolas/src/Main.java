@@ -1,4 +1,4 @@
-//Juego del TragaBolas con clases 
+//Juego del TragaBolas con la clase TragaBolas
 import java.util.Scanner;
 public class Main {
 
@@ -16,7 +16,7 @@ public class Main {
 		//variable para comprobar que se ha creado un TragaBolas
 		boolean tbCreado=false;
 		
-		//lo pongo nulo para que no de error
+		//lo pongo nulo para que no de error el switch
 		TragaBolas tb1=null;
 		
 		do{
@@ -41,11 +41,11 @@ public class Main {
 					System.out.println("Introduce el color: ");
 					color=teclado.nextLine();
 					
-					if(!TragaBolas.ColorPermitido(color))
+					if(!TragaBolas.colorPermitido(color))
 						System.out.println("Color NO PERMITIDO.");
 						
 						
-				}while(!TragaBolas.ColorPermitido(color));
+				}while(!TragaBolas.colorPermitido(color));
 				
 				//pido la cantMax de bolas
 				System.out.println("Intrduce la cantidad máxima de bolas: ");
@@ -62,13 +62,13 @@ public class Main {
 						switch(opcion){
 							
 							case 2:
-								tb1.Comer(); break;
+								tb1.comer(); break;
 							case 3:
-								tb1.Dormir(); break;
+								tb1.dormir(); break;
 							case 4:
-								tb1.Visualizar(); break;
+								tb1.visualizar(); break;
 							case 5:
-								tb1.Trotar(); break;
+								tb1.trotar(); break;
 							case 0:
 								System.out.println("Gracias por jugar. Hasta luego!"); break;
 			
