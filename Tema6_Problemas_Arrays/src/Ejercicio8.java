@@ -42,18 +42,26 @@ public class Ejercicio8 {
 		
 		switch(opcion){
 			case 1:
-				texto_opcion=" del alumno: "; break;
+				texto_opcion=" del alumno"; break;
 			case 2:
-				texto_opcion=" de asignatura: "; break;
+				texto_opcion=" de la asignatura"; break;
 		}
 		
 		byte numero;
 		
 		do{
+			
+			try{
 			System.out.println("***********************************");
 			System.out.println("Introduce el número" +texto_opcion);
 			System.out.println("***********************************");
 			numero=teclado.nextByte();
+			}catch(Exception e){
+				System.out.println("***********************************");
+				System.out.println("Introduce el número" +texto_opcion);
+				System.out.println("***********************************");
+				numero=teclado.nextByte();
+			}
 			
 		}while(numero<0 || numero>9);
 		
@@ -77,7 +85,7 @@ public class Ejercicio8 {
 		
 		media=suma/10;
 		
-		System.out.print("La media" +texto_opcion +" " +numero +" es " +media +" .");
+		System.out.print("La media" +texto_opcion +" con número " +numero +" es " +media +" .");
 		
 		
 		
