@@ -19,16 +19,25 @@ public class Main {
 
 		do{
 			
-			System.out.println("Elige una opción del menú:"
-					+ "\n1.Crear nueva Baraja. (Máx. 3 Barajas)"
-					+ "\n2.Cambiar de Baraja"
-					+ "\n3.Extraer Carta"
-					+ "\n4.Rellenar Baraja"
-					+ "\n5.Ver id Baraja"
-					+ "\n6.Ver cartas extraídas"
-					+ "\n0.Salir");
-			opcion=teclado.nextByte();
+			try{
+				System.out.println("Elige una opción del menú:"
+						+ "\n1.Crear nueva Baraja. (Máx. 3 Barajas)"
+						+ "\n2.Cambiar de Baraja"
+						+ "\n3.Extraer Carta"
+						+ "\n4.Rellenar Baraja"
+						+ "\n5.Ver id Baraja"
+						+ "\n6.Ver cartas extraídas"
+						+ "\n0.Salir");
+				opcion=teclado.nextByte();
 			
+			}catch(Exception e){
+				System.out.println("Valor no válido.".toUpperCase());
+				//limpia el buffer
+				teclado.next();
+				
+				//Vuelve al principio del bucle sin ejecutar ninguna sentencia más
+				continue;
+			}
 			
 			switch(opcion){
 			case 1:
@@ -212,6 +221,10 @@ public class Main {
 	
 	static byte barajasCreadas(){
 		byte barajasCreadas=0;
+		
+		if(barajasCreadas==0){
+			throw new NullPointerException();
+		}
 		
 		for(int i=0;i<miBaraja.length;i++)
 			if(miBaraja[i]!=null)
