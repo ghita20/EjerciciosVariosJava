@@ -8,13 +8,13 @@ public class Isla {
 		private int movimientos;
 		
 	//********CONSTRUCTOR
-		public Isla(){
+		public Isla(char aspecto_raton){
 			isla=new char[10][10];
-			generarIsla();
+			generarIsla(aspecto_raton);
 			movimientos=0;
 		}
 		
-		public void generarIsla(){
+		public void generarIsla(char aspecto_raton){
 			
 			//inicializa todas las variables a 0
 			for(int i=0;i<isla.length;i++)
@@ -46,8 +46,8 @@ public class Isla {
 			posicion_raton[0]=5;
 			posicion_raton[1]=5;
 			
-			raton=new Raton(posicion_raton);
-			isla[raton.getPosicion()[0]][raton.getPosicion()[1]]='r';
+			raton=new Raton(posicion_raton,aspecto_raton);
+			isla[raton.getPosicion()[0]][raton.getPosicion()[1]]=raton.getAspecto();
 		}
 		
 		//Imprime la isla en pantalla
@@ -75,7 +75,7 @@ public class Isla {
 				
 				raton.setPosicion(posicion_raton);
 				//colocamos en la isla al raton
-				isla[ posicion_raton[0] ][ posicion_raton[1] ] ='r';
+				isla[ posicion_raton[0] ][ posicion_raton[1] ] =raton.getAspecto();
 			}
 		
 		//Mover Derecha
