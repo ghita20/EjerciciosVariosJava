@@ -33,6 +33,7 @@ public class Main {
 				aspecto=teclado.next().charAt(0);
 				
 				isla=new Isla(aspecto); 	isla.imprimirIsla();
+				segundoBucle:
 				do{
 					try{
 						System.out.println("6.Mover a la derecha"
@@ -51,7 +52,7 @@ public class Main {
 						System.out.println();
 						
 						teclado.next();
-						continue;
+						continue segundoBucle;
 					}
 					
 					switch(opcion){
