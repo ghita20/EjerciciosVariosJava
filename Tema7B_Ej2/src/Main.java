@@ -129,16 +129,13 @@ public class Main {
 		}//fin for Administrativos
 		
 		System.out.println("Datos de empleados Administrativos: ");
-		for( Administrativo a: administrativos)
-			a.visualizarTodosDatos();
+		visualizarDatos(administrativos);
 		
 		System.out.println("Datos de empleados Maquinistas: ");
-		for( Maquinista m: maquinistas)
-			m.visualizarTodosDatos();
+		visualizarDatos(maquinistas);
 		
 		System.out.println("Datos de Otros Empleados: ");
-		for( Empleado o: otrosEmpleados)
-			o.visualizarTodosDatos();
+		visualizarDatos(otrosEmpleados);
 		
 		
 	}
@@ -147,6 +144,12 @@ public class Main {
 		if( nr > 0 )
 			return true;
 		return false;
+	}
+	
+	static void visualizarDatos(Empleado[] a){
+				
+		for( int i=0;i<a.length;i++)
+			a[i].visualizarTodosDatos();
 	}
 
 }

@@ -1,5 +1,5 @@
 
-public class Maquinista extends Empleado implements Interfaz{
+public class Maquinista extends Empleado {
 	private int numeroMaquinaAsignada,numeroAñosMaquina;
 
 	
@@ -31,7 +31,7 @@ public class Maquinista extends Empleado implements Interfaz{
 		System.out.println(
 				"Nombre: " +getNombre() +" | edad: " +getEdad()
 				+" | sueldo: " +getSueldo() +" | numeroMaquinaAsignada: " +getNumeroMaquinaAsignada()
-				+" | numeroAñosMquina: " +getNumeroAñosMaquina());
+				+" | numeroAñosMaquina: " +getNumeroAñosMaquina());
 	}
 	
 	

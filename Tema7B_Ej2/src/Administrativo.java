@@ -1,5 +1,5 @@
 
-public class Administrativo extends Empleado implements Interfaz {
+public class Administrativo extends Empleado {
 	private String estudiosAcademicos;
 	private int numeroOrdenador;
 	
