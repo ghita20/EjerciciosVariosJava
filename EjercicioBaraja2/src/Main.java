@@ -222,10 +222,6 @@ public class Main {
 	static byte barajasCreadas(){
 		byte barajasCreadas=0;
 		
-		if(barajasCreadas==0){
-			throw new NullPointerException();
-		}
-		
 		for(int i=0;i<miBaraja.length;i++)
 			if(miBaraja[i]!=null)
 				barajasCreadas++;

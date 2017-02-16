@@ -43,7 +43,7 @@ public class Main {
 					turno=tab.getTurno()%2==0?2:1;
 					
 					System.out.println("******************************");
-					System.out.println("Turno del jugador " + turno );
+					System.out.println("Turno del jugador " + tab.getJugador(turno-1).getNombre().toUpperCase() );
 					System.out.println("******************************");
 					tab.imprimirTablero();
 					
