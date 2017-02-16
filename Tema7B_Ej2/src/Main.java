@@ -128,26 +128,26 @@ public class Main {
 			
 		}//fin for Administrativos
 		
-		System.out.println("Datos de empleados Administrativos: ");
 		visualizarDatos(administrativos);
 		
-		System.out.println("Datos de empleados Maquinistas: ");
 		visualizarDatos(maquinistas);
 		
-		System.out.println("Datos de Otros Empleados: ");
 		visualizarDatos(otrosEmpleados);
 		
 		
 	}
 	
 	static boolean comprobarNumero(int nr){
-		if( nr > 0 )
+		if( nr >= 0 )
 			return true;
 		return false;
 	}
 	
 	static void visualizarDatos(Empleado[] a){
-				
+		
+		String clase=a.getClass().getName().substring(2);
+		System.out.println("Datos de " +clase);
+		
 		for( int i=0;i<a.length;i++)
 			a[i].visualizarTodosDatos();
 	}
