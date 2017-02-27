@@ -59,35 +59,34 @@ public class Tablero {
 	}
 	
 	public boolean comprobarPosicion(int fila, int columna){
-		boolean valido=true;
 		
 		//comprobar horizontal
-		for(int i=0;i<tablero[fila].length && valido;i++)
+		for(int i=0;i<tablero[fila].length;i++)
 				if(tablero[fila][i]=='R')
-					valido=false;
+					return false;
 			
 		//comprobar vertical
-		for(int i=0;i<tablero.length && valido;i++)
+		for(int i=0;i<tablero.length;i++)
 				if(tablero[i][columna]=='R')
-					valido=false;
+					return false;
 				
 		
 		int f=fila,c=columna;		
 		
 		//diagonal derecha arriba
 				f=fila-1;c=columna+1;
-				while(f>=0 && c<tablero.length && valido){
+				while(f>=0 && c<tablero.length){
 					if(tablero[f][c]=='R')
-						valido=false;
+						return false;
 						
 					f--;c++;
 				}
 				
 		//diagonal izquierda arriba	
 				f=fila;c=columna;
-				while(f>=0 && c>=0 && valido){
+				while(f>=0 && c>=0){
 					if(tablero[f][c]=='R')
-						valido=false;
+						return false;
 								
 					f--;c--;
 				}
@@ -95,9 +94,9 @@ public class Tablero {
 				
 		//diagonal izquierda abajo	
 				f=fila;c=columna;
-				while(f<tablero.length && c>=0 && valido){
+				while(f<tablero.length && c>=0){
 					if(tablero[f][c]=='R')
-						valido=false;
+						return false;
 					
 					f++;c--;
 				}
@@ -105,14 +104,14 @@ public class Tablero {
 				
 		//diagonal derecha abajo	
 				f=fila;c=columna;
-				while(f<tablero.length && c<tablero.length && valido){
+				while(f<tablero.length && c<tablero.length){
 					if(tablero[f][c]=='R')
-						valido=false;
+						return false;
 					
 					f++;c++;
 				}		
 		
-		return valido;
+		return true;
 		
 	}
 	
