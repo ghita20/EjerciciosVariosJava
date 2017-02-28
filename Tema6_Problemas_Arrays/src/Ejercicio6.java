@@ -44,7 +44,7 @@ public class Ejercicio6 {
 			for(int j=0;j<matriz.length;j++)
 				sumaCol+=matriz[j][i];
 			
-			System.out.println("************** Suma de la columna "+i +" = " +(float)Math.rint(sumaCol*100)/100);
+			System.out.println("*  *  *  *  *  Suma de la columna "+i +" = " +(float)Math.rint(sumaCol*100)/100);
 				
 		}
 		
